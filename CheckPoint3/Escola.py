@@ -226,20 +226,20 @@ def studentsSubscribe():
             while count < 3:
                 print("****MATUTINO****")
                 #verificando disponibilidade de oficinas
-                if len(Op3M1) < 10: 
-                    print("--Segunda-Feira-- Criar e contar histórias (Opção--> 1)")
-                    print(f'Já foram realizadas {len(Op3M1)} inscrições!')
+                if len(Op4M1) < 10: 
+                    print("--Terça-Feira-- Teatro: Luz, Câmera e Ação (Opção--> 1)")
+                    print(f'Já foram realizadas {len(Op4M1)} inscrições!')
                     #quantas inscriçoes ja foram realizadas
-                if len(Op3M2) < 10:
-                    print("--Terça-Feira-- Teatro: Luz, Câmera e Ação (Opção--> 2)")
-                    print(f'Já foram realizadas {len(Op3M2)} inscrições!')
-                if len(Op3M3) < 10:
-                    print("--Quarta-Feira-- A lingua dos sinais (Opção--> 3)")
-                    print(f'Já foram realizadas {len(Op3M3)} inscrições!')
+                if len(Op4M2) < 10:
+                    print("--Quarta-Feira-- A lingua dos sinais (Opção--> 2)")
+                    print(f'Já foram realizadas {len(Op4M2)} inscrições!')
+                if len(Op4M3) < 10:
+                    print("--Quinta-Feira-- Expressão Artística (Opção--> 3)")
+                    print(f'Já foram realizadas {len(Op4M3)} inscrições!')
                 print("****VESPERTINO****")
-                if len(Op3V1) < 10:
-                    print("--Terça-Feira-- O corpo fala (Opção--> 4)")
-                    print(f'Já foram realizadas {len(Op3V1)} inscrições!')
+                if len(Op4V1) < 10:
+                    print("--Segunda-Feira-- Leitura dramática (Opção--> 4)")
+                    print(f'Já foram realizadas {len(Op4V1)} inscrições!')
                 print("Retorno ao menu --> 0")
                 #solicitando que o usuario escolha uma opção
                 opcao = int(input("Escolha uma opção --> "))
@@ -249,32 +249,32 @@ def studentsSubscribe():
                     opcao = int(input("Digite uma opção valida: "))
                 if opcao == 1:
                     #verificando se o usuario ja esta cadastrado em tal oficina, se nao, cadastrar.
-                    if rm not in Op3M1:
-                        Op3M1.append(rm)
+                    if rm not in Op4M1:
+                        Op4M1.append(rm)
                         menu()
                     else: 
                         print("Opção já cadastrada, digite outra opção")
                         count = count - 1
                         opcao = int(input("---> "))
                 elif opcao == 2:
-                    if rm not in Op3M2:
-                        Op3M2.append(rm)
+                    if rm not in Op4M2:
+                        Op4M2.append(rm)
                         menu()
                     else:
                         print("Opção já cadastrada, digite outra opção")
                         count = count - 1
                         opcao = int(input("---> "))
                 elif opcao == 3:
-                    if rm not in Op3M3:
-                        Op3M3.append(rm)
+                    if rm not in Op4M3:
+                        Op4M3.append(rm)
                         menu()
                     else:
                         print("Opção já cadastrada, digite outra opção")
                         count = count - 1
                         opcao = int(input("---> "))
                 elif opcao == 4:
-                    if rm not in Op3V1:
-                        Op3V1.append(rm)
+                    if rm not in Op4V1:
+                        Op4V1.append(rm)
                         menu()
                     else:
                         print("Opção já cadastrada, digite outra opção")
