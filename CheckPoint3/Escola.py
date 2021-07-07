@@ -289,12 +289,69 @@ def studentsSubscribe():
         #oficinas disponiveis para o quinto ano 
         elif rm in rm5class:
             print("***Oficinas Disponiveis***")
-            print("****MATUTINO****")
-            print("--Quarta-Feira-- A lingua dos sinais")
-            print("--Quinta-Feira-- Expressão Artística")
-            print("--Sexta-Feira-- Soletrando")
-            print("****VESPERTINO****")
-            print("--Quinta-Feira-- Leitura dinâmica")
+            count = 0
+            while count < 3:
+                print("****MATUTINO****")
+                #verificando disponibilidade de oficinas
+                if len(Op5M1) < 10: 
+                    print("--Quarta-Feira-- A lingua dos sinais (Opção--> 1)")
+                    print(f'Já foram realizadas {len(Op5M1)} inscrições!')
+                    #quantas inscriçoes ja foram realizadas
+                if len(Op5M2) < 10:
+                    print("--Quinta-Feira-- Expressão Artística (Opção--> 2)")
+                    print(f'Já foram realizadas {len(Op5M2)} inscrições!')
+                if len(Op5M3) < 10:
+                    print("--Sexta-Feira-- Soletrando (Opção--> 3)")
+                    print(f'Já foram realizadas {len(Op5M3)} inscrições!')
+                print("****VESPERTINO****")
+                if len(Op5V1) < 10:
+                    print("--Quinta-Feira-- Leitura dinâmica (Opção--> 4)")
+                    print(f'Já foram realizadas {len(Op5V1)} inscrições!')
+                print("Retorno ao menu --> 0")
+                #solicitando que o usuario escolha uma opção
+                opcao = int(input("Escolha uma opção --> "))
+                #validando para que seja uma opção existente 
+                while opcao < 0 or opcao > 4:
+                    print("Opção invalida!")
+                    opcao = int(input("Digite uma opção valida: "))
+                if opcao == 1:
+                    #verificando se o usuario ja esta cadastrado em tal oficina, se nao, cadastrar.
+                    if rm not in Op5M1:
+                        Op5M1.append(rm)
+                        menu()
+                    else: 
+                        print("Opção já cadastrada, digite outra opção")
+                        count = count - 1
+                        opcao = int(input("---> "))
+                elif opcao == 2:
+                    if rm not in Op5M2:
+                        Op5M2.append(rm)
+                        menu()
+                    else:
+                        print("Opção já cadastrada, digite outra opção")
+                        count = count - 1
+                        opcao = int(input("---> "))
+                elif opcao == 3:
+                    if rm not in Op5M3:
+                        Op5M3.append(rm)
+                        menu()
+                    else:
+                        print("Opção já cadastrada, digite outra opção")
+                        count = count - 1
+                        opcao = int(input("---> "))
+                elif opcao == 4:
+                    if rm not in Op5V1:
+                        Op5V1.append(rm)
+                        menu()
+                    else:
+                        print("Opção já cadastrada, digite outra opção")
+                        count = count - 1
+                        opcao = int(input("---> "))
+                elif opcao == 0:
+                    count = count - 1
+                    menu()
+                count += 1
+                print(f' Você ja realizou {count} inscrições!')
     else:
         print("Aluno não cadastrado. Favor procurar a coordenação do Fundamental I")
 
