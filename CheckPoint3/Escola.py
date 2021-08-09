@@ -29,22 +29,25 @@ Op5M3 = []
 Op5V1 = []
 
 
-def menu():
+def menu(alreadyDone): # função que chama o menu de opções
     print("-"*50)
     print("COLEGIO NOVA ESPERANÇA-EVENTO LITERARIO")
     print("-"*50)
     print(" ")
     print("***Menu de Opções***")
-    print("1- Cadastrar Alunos")
+    if alreadyDone == 0:
+        print("1- Cadastrar Alunos")
     print("2- Fazer Inscrições")
     print("3- Listar Inscrições")
     print("4- Sair")
     print("********************")
 
+    #entrada de dados pelo usuário para começar a lógica do programa
     return int(input("Escolha a opção desejada, apenas o numero: "))
 
-def studentsRegistration():
+def studentsRegistration(): # função para registrar os alunos 
     while True:
+        #receber os rms para registro
         rm = int(input("Digite o rm do aluno: "))
         #validar quando deve sair do looping
         if rm ==0:
@@ -74,9 +77,9 @@ def studentsRegistration():
                 print("--Aluno Cadastrado--")
                 print("--Proximo Aluno--")
             else: 
-                print("Rm ja existente!")
+                print("Rm ja existente!") #verifica se o rm existe e volta o programa
 
-def studentsSubscribe():
+def studentsSubscribe(): # função para fazer inscrição dos alunos nas oficinas
     print("")
     print("-"*50)
     print("REALIZANDO INSCRIÇÕES")
@@ -116,7 +119,7 @@ def studentsSubscribe():
                     #verificando se o usuario ja esta cadastrado em tal oficina, se nao, cadastrar.
                     if rm not in Op2M1:
                         Op2M1.append(rm)
-                        menu()
+                        break
                     else: 
                         print("Opção já cadastrada, digite outra opção")
                         count = count - 1
@@ -124,7 +127,7 @@ def studentsSubscribe():
                 elif opcao == 2:
                     if rm not in Op2M2:
                         Op2M2.append(rm)
-                        menu()
+                        break
                     else:
                         print("Opção já cadastrada, digite outra opção")
                         count = count - 1
@@ -132,7 +135,7 @@ def studentsSubscribe():
                 elif opcao == 3:
                     if rm not in Op2V1:
                         Op2V1.append(rm)
-                        menu()
+                        break
                     else:
                         print("Opção já cadastrada, digite outra opção")
                         count = count - 1
@@ -140,14 +143,14 @@ def studentsSubscribe():
                 elif opcao == 4:
                     if rm not in Op2V2:
                         Op2V2.append(rm)
-                        menu()
+                        break
                     else:
                         print("Opção já cadastrada, digite outra opção")
                         count = count - 1
                         opcao = int(input("---> "))
                 elif opcao == 0:
                     count = count - 1
-                    menu()
+                    break
                 count += 1
                 print(f' Você ja realizou {count} inscrições!')
 
@@ -184,7 +187,7 @@ def studentsSubscribe():
                     #verificando se o usuario ja esta cadastrado em tal oficina, se nao, cadastrar.
                     if rm not in Op3M1:
                         Op3M1.append(rm)
-                        menu()
+                        break
                     else: 
                         print("Opção já cadastrada, digite outra opção")
                         count = count - 1
@@ -192,7 +195,7 @@ def studentsSubscribe():
                 elif opcao == 2:
                     if rm not in Op3M2:
                         Op3M2.append(rm)
-                        menu()
+                        break
                     else:
                         print("Opção já cadastrada, digite outra opção")
                         count = count - 1
@@ -200,7 +203,7 @@ def studentsSubscribe():
                 elif opcao == 3:
                     if rm not in Op3M3:
                         Op3M3.append(rm)
-                        menu()
+                        break
                     else:
                         print("Opção já cadastrada, digite outra opção")
                         count = count - 1
@@ -208,14 +211,14 @@ def studentsSubscribe():
                 elif opcao == 4:
                     if rm not in Op3V1:
                         Op3V1.append(rm)
-                        menu()
+                        break
                     else:
                         print("Opção já cadastrada, digite outra opção")
                         count = count - 1
                         opcao = int(input("---> "))
                 elif opcao == 0:
                     count = count - 1
-                    menu()
+                    break
                 count += 1
                 print(f' Você ja realizou {count} inscrições!')
                 
@@ -251,7 +254,7 @@ def studentsSubscribe():
                     #verificando se o usuario ja esta cadastrado em tal oficina, se nao, cadastrar.
                     if rm not in Op4M1:
                         Op4M1.append(rm)
-                        menu()
+                        break
                     else: 
                         print("Opção já cadastrada, digite outra opção")
                         count = count - 1
@@ -259,7 +262,7 @@ def studentsSubscribe():
                 elif opcao == 2:
                     if rm not in Op4M2:
                         Op4M2.append(rm)
-                        menu()
+                        break
                     else:
                         print("Opção já cadastrada, digite outra opção")
                         count = count - 1
@@ -267,7 +270,7 @@ def studentsSubscribe():
                 elif opcao == 3:
                     if rm not in Op4M3:
                         Op4M3.append(rm)
-                        menu()
+                        break
                     else:
                         print("Opção já cadastrada, digite outra opção")
                         count = count - 1
@@ -275,14 +278,14 @@ def studentsSubscribe():
                 elif opcao == 4:
                     if rm not in Op4V1:
                         Op4V1.append(rm)
-                        menu()
+                        break
                     else:
                         print("Opção já cadastrada, digite outra opção")
                         count = count - 1
                         opcao = int(input("---> "))
                 elif opcao == 0:
                     count = count - 1
-                    menu()
+                    break
                 count += 1
                 print(f' Você ja realizou {count} inscrições!')
             
@@ -318,7 +321,7 @@ def studentsSubscribe():
                     #verificando se o usuario ja esta cadastrado em tal oficina, se nao, cadastrar.
                     if rm not in Op5M1:
                         Op5M1.append(rm)
-                        menu()
+                        break
                     else: 
                         print("Opção já cadastrada, digite outra opção")
                         count = count - 1
@@ -326,7 +329,7 @@ def studentsSubscribe():
                 elif opcao == 2:
                     if rm not in Op5M2:
                         Op5M2.append(rm)
-                        menu()
+                        break
                     else:
                         print("Opção já cadastrada, digite outra opção")
                         count = count - 1
@@ -334,7 +337,7 @@ def studentsSubscribe():
                 elif opcao == 3:
                     if rm not in Op5M3:
                         Op5M3.append(rm)
-                        menu()
+                        break
                     else:
                         print("Opção já cadastrada, digite outra opção")
                         count = count - 1
@@ -342,36 +345,54 @@ def studentsSubscribe():
                 elif opcao == 4:
                     if rm not in Op5V1:
                         Op5V1.append(rm)
-                        menu()
+                        break
                     else:
                         print("Opção já cadastrada, digite outra opção")
                         count = count - 1
                         opcao = int(input("---> "))
                 elif opcao == 0:
                     count = count - 1
-                    menu()
+                    break
                 count += 1
                 print(f' Você ja realizou {count} inscrições!')
+    # caso aluno nao esteja cadastrado, vai voltar ao menu de opções
     else:
-        print("Aluno não cadastrado. Favor procurar a coordenação do Fundamental I")
+        print("Aluno não cadastrado. Favor procurar a coordenação do Fundamental I") 
 
 def listRegistration():
     print("")
     print("-"*50)
     print("LISTA DE INSCRIÇÕES")
     print("-"*50)
+    print("1 - Listar por aluno (ordem alfabética de nome)")
+    print("2 - Listar por oficina (ordem alfabética)") 
+    print("0 - Voltar para o menu")
+    op = int(input("Selicione uma opção: "))
+    while op <0 or op > 2:
+        print("Opção inválida!")
+        op = int(input("Digite uma opção válida: "))
+    if op == 0:
+        menu()
+    elif op == 1:
+        for x in school :
+            print(sorted(x))
         
-while True:
-    option = menu()
-    while option < 1 or option > 4:
-        print("Opção invalida!")
-        option = int(input("Digite uma opção valida: "))
-    if option == 1:
-        studentsRegistration()
-    elif option == 2:
-        studentsSubscribe()
-    elif option == 3:
-        listRegistration()
-    elif option == 4:
-        break
+alreadyDone = 0
+while alreadyDone == 0:
+    # Atribuir um controle de acesso ao menu
+    while True:
+        option = menu(alreadyDone)
+        while option < 1 or option > 4:
+            print("Opção invalida!")
+            option = int(input("Digite uma opção valida: "))
+        if option == 1:
+            studentsRegistration()
+            alreadyDone+=1
+        elif option == 2:
+            studentsSubscribe()
+            menu(alreadyDone)
+        elif option == 3:
+            listRegistration()
+        elif option == 4:
+            break
         
